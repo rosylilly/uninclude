@@ -10,7 +10,7 @@ static void uninclude(VALUE klass, VALUE mod) {
   for(; superklass; klass = superklass, klass = RCLASS_SUPER(klass)) {
     if(klass == mod || RCLASS_M_TBL(superklass) == RCLASS_M_TBL(mod)) {
       RCLASS_SUPER(klass) = RCLASS_SUPER(superklass);
-      rb_clear_cache();
+      rb_clear_cache_by_class(klass);
       break;
     }
   };
