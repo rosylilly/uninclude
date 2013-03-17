@@ -4,7 +4,9 @@
 #include <ruby/backward/classext.h>
 #endif
 
+#ifndef RCLASS_M_TBL
 #define RCLASS_M_TBL(c) (RCLASS(c)->m_tbl)
+#endif
 
 static void uninclude(VALUE klass, VALUE mod) {
   Check_Type(mod, T_MODULE);
