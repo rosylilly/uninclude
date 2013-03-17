@@ -8,12 +8,13 @@ Gem::Specification.new do |spec|
   spec.version       = Uninclude::VERSION
   spec.authors       = ["Sho Kusano"]
   spec.email         = ["rosylilly@aduca.org"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Implement Module#uninclude and Object#unextend}
+  spec.summary       = %q{Implement Module#uninclude and Object#unextend}
+  spec.homepage      = "https://github.com/rosylilly/uninclude"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
+  spec.extensions    = %w{ext/uninclude/extconf.rb}
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]

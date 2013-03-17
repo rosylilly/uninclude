@@ -1,5 +1,2 @@
-require "uninclude/version"
-
-module Uninclude
-  # Your code goes here...
-end
+require 'uninclude/version'
+require 'uninclude/uninclude'
