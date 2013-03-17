@@ -1,6 +1,19 @@
 # Uninclude
 
+[![Build Status](https://travis-ci.org/rosylilly/uninclude.png?branch=master)](https://travis-ci.org/rosylilly/uninclude)
+
 Implement Class#uninclude and Object#unextend
+
+## Tested ruby versions
+
+- 2.0.0
+- 1.9.3
+- 1.9.2
+- 1.8.7
+- 1.8.6
+- REE
+
+see [travis-ci.org](https://travis-ci.org/rosylilly/uninclude)
 
 ## Installation
 
