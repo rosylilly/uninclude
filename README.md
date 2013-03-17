@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/rosylilly/uninclude.png?branch=master)](https://travis-ci.org/rosylilly/uninclude)
 
-Implement Class#uninclude and Object#unextend
+Implement Module#uninclude and Object#unextend
 
 ## Tested ruby versions
 
