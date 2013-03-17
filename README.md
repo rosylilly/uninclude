@@ -10,8 +10,9 @@ Implement Class#uninclude and Object#unextend
 - 1.9.3
 - 1.9.2
 - 1.8.7
-- 1.8.6
 - REE
+- Rubinius 1.8
+- Rubinius 1.9
 
 see [travis-ci.org](https://travis-ci.org/rosylilly/uninclude)
 
