@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'timeout'
 
 module ExampleMod
   def mod; :mod; end
@@ -17,6 +18,10 @@ describe Uninclude do
       instance.should respond_to(:mod)
       klass.class_eval { uninclude ExampleMod }
       instance.should_not respond_to(:mod)
+    end
+
+    it 'should not infinite loop' do
+      klass.class_eval { uninclude(Module.new) }
     end
   end
 
