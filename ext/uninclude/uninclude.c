@@ -12,12 +12,15 @@ static void uninclude(VALUE klass, VALUE mod) {
   Check_Type(mod, T_MODULE);
 
   VALUE superklass = RCLASS_SUPER(klass);
+  VALUE lastklass = 0;
   for(; superklass; klass = superklass, klass = RCLASS_SUPER(klass)) {
+    if(lastklass == klass) break;
     if(klass == mod || RCLASS_M_TBL(superklass) == RCLASS_M_TBL(mod)) {
       RCLASS_SUPER(klass) = RCLASS_SUPER(superklass);
       rb_clear_cache_by_class(klass);
       break;
     }
+    lastklass = klass;
   };
 };
 
