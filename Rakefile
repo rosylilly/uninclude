@@ -21,4 +21,4 @@ end
 RSpec::Core::RakeTask.new(:spec)
 task :spec => "lib/#{GEM_NAME}/#{GEM_NAME}.#{DLEXT}"
 
-task :default => :spec
+task :default => [:clean, :spec]

@@ -15,9 +15,9 @@ describe Uninclude do
   describe '.uninclude' do
     it 'should uninclude module' do
       klass.class_eval { include ExampleMod }
-      instance.should respond_to(:mod)
+      expect(instance).to respond_to(:mod)
       klass.class_eval { uninclude ExampleMod }
-      instance.should_not respond_to(:mod)
+      expect(instance).to_not respond_to(:mod)
     end
 
     it 'should not infinite loop' do
@@ -28,9 +28,9 @@ describe Uninclude do
   describe '#unextend' do
     it 'should unextend module' do
       instance.extend(ExampleMod)
-      instance.should respond_to(:mod)
+      expect(instance).to respond_to(:mod)
       instance.unextend(ExampleMod)
-      instance.should_not respond_to(:mod)
+      expect(instance).to_not respond_to(:mod)
     end
   end
 end
