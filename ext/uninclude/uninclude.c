@@ -8,6 +8,17 @@
 #define RCLASS_M_TBL(c) (RCLASS(c)->m_tbl)
 #endif
 
+#ifndef RB_CLEAR_CACHE_BY_CLASS
+#define RB_CLEAR_CACHE_BY_CLASS(c) rb_clear_cache_by_class(c)
+#endif
+
+#ifdef RUBY_V2_1_0
+#undef RCLASS_M_TBL
+#define RCLASS_M_TBL(c) (RCLASS(c)->m_tbl_wrapper)
+#undef RB_CLEAR_CACHE_BY_CLASS
+#define RB_CLEAR_CACHE_BY_CLASS(c) rb_clear_method_cache_by_class(c)
+#endif
+
 static void uninclude(VALUE klass, VALUE mod) {
   Check_Type(mod, T_MODULE);
 
@@ -17,7 +28,7 @@ static void uninclude(VALUE klass, VALUE mod) {
     if(lastklass == klass) break;
     if(klass == mod || RCLASS_M_TBL(superklass) == RCLASS_M_TBL(mod)) {
       RCLASS_SUPER(klass) = RCLASS_SUPER(superklass);
-      rb_clear_cache_by_class(klass);
+      RB_CLEAR_CACHE_BY_CLASS(klass);
       break;
     }
     lastklass = klass;
