@@ -8,6 +8,11 @@ end
 describe Uninclude do
   let(:klass) {
     Class.new do
+      def singleton_class
+        class << self
+          self
+        end
+      end
     end
   }
   let(:instance) { klass.new }
