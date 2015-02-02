@@ -1,8 +1,8 @@
 # Uninclude
 
-[![Gem Version](https://badge.fury.io/rb/uninclude.png)](http://rubygems.org/gems/uninclude)
-[![Build Status](https://travis-ci.org/rosylilly/uninclude.png?branch=master)](https://travis-ci.org/rosylilly/uninclude)
-[![Dependency Status](https://gemnasium.com/rosylilly/uninclude.png)](https://gemnasium.com/rosylilly/uninclude)
+[![Gem Version](https://badge.fury.io/rb/uninclude.svg)](http://rubygems.org/gems/uninclude)
+[![Build Status](https://travis-ci.org/rosylilly/uninclude.svg?branch=master)](https://travis-ci.org/rosylilly/uninclude)
+[![Dependency Status](https://gemnasium.com/rosylilly/uninclude.svg)](https://gemnasium.com/rosylilly/uninclude)
 
 Implement Module#uninclude and Object#unextend
 
