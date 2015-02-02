@@ -47,5 +47,6 @@ static VALUE rb_m_unextend(VALUE self, VALUE mod) {
 
 void Init_uninclude(void) {
   rb_define_private_method(rb_cModule, "uninclude", RUBY_METHOD_FUNC(rb_m_uninclude), 1);
+  rb_define_private_method(rb_cModule, "unprepend", RUBY_METHOD_FUNC(rb_m_uninclude), 1);
   rb_define_method(rb_cObject, "unextend", RUBY_METHOD_FUNC(rb_m_unextend), 1);
 }
