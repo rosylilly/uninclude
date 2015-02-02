@@ -8,11 +8,9 @@ end
 describe Uninclude do
   let(:klass) {
     Class.new do
-      if respond_to_missing?(:singleton_class, true)
-        def singleton_class
-          class << self
-            self
-          end
+      def singleton_class
+        class << self
+          self
         end
       end
     end
