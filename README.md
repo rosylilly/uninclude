@@ -8,6 +8,7 @@ Implement Module#uninclude and Object#unextend
 
 ## Tested ruby versions
 
+- 2.2.3
 - 2.2.0
 - 2.1.4
 - 2.1.0
