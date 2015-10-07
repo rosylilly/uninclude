@@ -59,6 +59,20 @@ foo.unextend(Bar)
 p foo.singleton_class.ancestors # => [Foo, Object, Kernel, BasicObject]
 ```
 
+### `uninclude/block`
+
+Make `#include` / `#uninclude` accepts blocks.
+
+```ruby
+require 'uninclude/block' # This feature is optional. Please require 'uninclude/block' first.
+
+Foo.include(Bar) do
+  p Foo.ancestors # => [Foo, Bar, Object, Kernel, BasicObject]
+end
+
+p Foo.ancestors # => [Foo, Object, Kernel, BasicObject]
+```
+
 ## Contributing
 
 1. Fork it

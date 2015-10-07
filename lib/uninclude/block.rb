@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-require 'uninclude/uninclude'
+require 'uninclude'
 
 class Module
   alias_method :__include, :include
   alias_method :__uninclude, :uninclude
-  
-  def include(mod)
 
+  def include(mod)
     __include(mod)
 
     if block_given?
@@ -32,7 +31,6 @@ class Object
   alias_method :__unextend, :unextend
 
   def extend(mod)
-
     __extend(mod)
 
     if block_given?
@@ -42,7 +40,7 @@ class Object
   end
 
   def unextend(mod)
-    return unless self.singleton_class.ancestors.include?(mod)
+    return unless singleton_class.ancestors.include?(mod)
 
     __unextend(mod)
 
@@ -51,5 +49,4 @@ class Object
       __extend(mod)
     end
   end
-
 end
